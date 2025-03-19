@@ -1,4 +1,4 @@
-ddocument.getElementById('search_button').addEventListener('click', function() {
+document.getElementById('search_button').addEventListener('click', function() {
     const jobTitle = document.getElementById('job_title').value.trim();
     const city = document.getElementById('city').value.trim();
     const company = document.getElementById('company').value.trim();

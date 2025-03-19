@@ -1,4 +1,4 @@
-from ParsPart import create_app
+from JobParser.ParsPart.app import create_app
 
 if __name__ == '__main__':
     app = create_app()

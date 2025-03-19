@@ -1,14 +1,21 @@
 import mysql.connector
 
 DB_CONFIG = {
-    "host": "mysql_parser",
+    "host": "localhost",
     "user": "parser_user",
     "password": "password123",
     "database": "parser_db"
 }
 
 def get_db():
-    return mysql.connector.connect(**DB_CONFIG)
+    try:
+        print("Connecting to database...")
+        db = mysql.connector.connect(**DB_CONFIG)
+        print("Connected successfully!")
+        return db
+    except mysql.connector.Error as e:
+        print("Error connecting to MySQL:", e)
+        raise
 
 def query_db(query, args=(), one=False):
     db = get_db()
